@@ -406,7 +406,7 @@ var src = "https://maplestory.io/api/" + region + "/" + version + "/item/categor
 
 function fnHairShow(){
 	$('#Hbtn').toggleClass("active");
-	var dropdownContent = $('#Hbtn').next();
+	var dropdownContent = document.getElementById('Hbtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
@@ -521,7 +521,7 @@ function fnHairShow(){
 
 function fnFaceShow(){
 	$('#Fbtn').toggleClass("active");
-	var dropdownContent = $('#Fbtn').next();
+	var dropdownContent = document.getElementById('Fbtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
