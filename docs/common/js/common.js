@@ -404,3 +404,1211 @@ function includeHTML(callback) {
     callback();
   }, 0);
 }
+
+
+var src = "https://maplestory.io/api/" + region + "/" + version + "/item/category/equip";
+
+function fnHairShow(){
+	$('#Hbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedHair= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedHair = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 30000 && item.id <= 60000 && item.isCash && item.requiredGender == 0),
+					item => Math.floor(item.id / 10)
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedHair = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 30000 && item.id <= 60000 && item.isCash && item.requiredGender == 1),
+					item => Math.floor(item.id / 10)
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedHair = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 30000 && item.id <= 60000 && item.isCash && item.requiredGender == 2),
+					item => Math.floor(item.id / 10)
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else{
+				groupedHair = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 30000 && item.id <= 60000 && item.isCash),
+					item => Math.floor(item.id / 10)
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedHair = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 30000 && item.id <= 60000 && item.requiredGender == 0),
+					item => Math.floor(item.id / 10)
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedHair = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 30000 && item.id <= 60000 && item.requiredGender == 1),
+					item => Math.floor(item.id / 10)
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedHair = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 30000 && item.id <= 60000 && item.requiredGender == 2),
+					item => Math.floor(item.id / 10)
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else{
+				groupedHair = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 30000 && item.id <= 60000),
+					item => Math.floor(item.id / 10)
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedHair.length; i++){
+			var iconId = groupedHair[i].id;
+			var iconNm = groupedHair[i].name;
+			var iconCate = groupedHair[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#hairList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddHair("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+
+}
+
+function fnFaceShow(){
+	$('#Fbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedFaces= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedFaces = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 10000 && item.id < 30000 && item.isCash && item.requiredGender == 0),
+					item => (item.id % 100) + (item.id - (item.id % 1000))
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedFaces = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 10000 && item.id < 30000 && item.isCash && item.requiredGender == 1),
+					item => (item.id % 100) + (item.id - (item.id % 1000))
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedFaces = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 10000 && item.id < 30000 && item.isCash && item.requiredGender == 2),
+					item => (item.id % 100) + (item.id - (item.id % 1000))
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else{
+				groupedFaces = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 10000 && item.id < 30000 && item.isCash),
+					item => (item.id % 100) + (item.id - (item.id % 1000))
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedFaces = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 10000 && item.id < 30000 && item.requiredGender == 0),
+					item => (item.id % 100) + (item.id - (item.id % 1000))
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedFaces = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 10000 && item.id < 30000 && item.requiredGender == 1),
+					item => (item.id % 100) + (item.id - (item.id % 1000))
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedFaces = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 10000 && item.id < 30000 && item.requiredGender == 2),
+					item => (item.id % 100) + (item.id - (item.id % 1000))
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}else{
+				groupedFaces = _.map(
+					_.groupBy(
+					itemData.filter(item => item.id >= 10000 && item.id < 30000 ),
+					item => (item.id % 100) + (item.id - (item.id % 1000))
+					), itemGrouping => {
+					const firstItem = itemGrouping[0]
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedFaces.length; i++){
+			var iconId = groupedFaces[i].id;
+			var iconNm = groupedFaces[i].name;
+			var iconCate = groupedFaces[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#FaceList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddFace("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnOverallShow(){
+	$('#Obtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedOveralls= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedOveralls = _.map(
+					itemData.filter(item => item.id >= 1050000 && item.id < 1060000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedOveralls = _.map(
+					itemData.filter(item => item.id >= 1050000 && item.id < 1060000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedOveralls = _.map(
+					itemData.filter(item => item.id >= 1050000 && item.id < 1060000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedOveralls = _.map(
+					itemData.filter(item => item.id >= 1050000 && item.id < 1060000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedOveralls = _.map(
+					itemData.filter(item => item.id >= 1050000 && item.id < 1060000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedOveralls = _.map(
+					itemData.filter(item => item.id >= 1050000 && item.id < 1060000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedOveralls = _.map(
+					itemData.filter(item => item.id >= 1050000 && item.id < 1060000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedOveralls = _.map(
+					itemData.filter(item => item.id >= 1050000 && item.id < 1060000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+
+		for(var i=0; i<groupedOveralls.length; i++){
+			var iconId = groupedOveralls[i].id;
+			var iconNm = groupedOveralls[i].name;
+			var iconCate = groupedOveralls[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#overAllList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddOverall("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnTopShow(){
+	$('#Tbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedTops= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedTops = _.map(
+					itemData.filter(item => item.id >= 1040000 && item.id < 1050000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedTops = _.map(
+					itemData.filter(item => item.id >= 1040000 && item.id < 1050000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedTops = _.map(
+					itemData.filter(item => item.id >= 1040000 && item.id < 1050000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedTops = _.map(
+					itemData.filter(item => item.id >= 1040000 && item.id < 1050000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedTops = _.map(
+					itemData.filter(item => item.id >= 1040000 && item.id < 1050000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedTops = _.map(
+					itemData.filter(item => item.id >= 1040000 && item.id < 1050000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedTops = _.map(
+					itemData.filter(item => item.id >= 1040000 && item.id < 1050000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedTops = _.map(
+					itemData.filter(item => item.id >= 1040000 && item.id < 1050000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedTops.length; i++){
+			var iconId = groupedTops[i].id;
+			var iconNm = groupedTops[i].name;
+			var iconCate = groupedTops[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#topList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddTop("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnBottomShow(){
+	$('#Bbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedBottoms= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedBottoms = _.map(
+					itemData.filter(item => item.id >= 1060000 && item.id < 1070000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedBottoms = _.map(
+					itemData.filter(item => item.id >= 1060000 && item.id < 1070000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedBottoms = _.map(
+					itemData.filter(item => item.id >= 1060000 && item.id < 1070000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedBottoms = _.map(
+					itemData.filter(item => item.id >= 1060000 && item.id < 1070000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedBottoms = _.map(
+					itemData.filter(item => item.id >= 1060000 && item.id < 1070000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedBottoms = _.map(
+					itemData.filter(item => item.id >= 1060000 && item.id < 1070000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedBottoms = _.map(
+					itemData.filter(item => item.id >= 1060000 && item.id < 1070000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedBottoms = _.map(
+					itemData.filter(item => item.id >= 1060000 && item.id < 1070000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedBottoms.length; i++){
+			var iconId = groupedBottoms[i].id;
+			var iconNm = groupedBottoms[i].name;
+			var iconCate = groupedBottoms[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#bottomList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddBottom("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+
+function fnHatShow(){
+	$('#Hatbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedHats= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedHats = _.map(
+					itemData.filter(item => item.id >= 1000000 && item.id < 1010000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedHats = _.map(
+					itemData.filter(item => item.id >= 1000000 && item.id < 1010000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedHats = _.map(
+					itemData.filter(item => item.id >= 1000000 && item.id < 1010000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedHats = _.map(
+					itemData.filter(item => item.id >= 1000000 && item.id < 1010000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedHats = _.map(
+					itemData.filter(item => item.id >= 1000000 && item.id < 1010000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedHats = _.map(
+					itemData.filter(item => item.id >= 1000000 && item.id < 1010000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedHats = _.map(
+					itemData.filter(item => item.id >= 1000000 && item.id < 1010000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedHats = _.map(
+					itemData.filter(item => item.id >= 1000000 && item.id < 1010000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedHats.length; i++){
+			var iconId = groupedHats[i].id;
+			var iconNm = groupedHats[i].name;
+			var iconCate = groupedHats[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#hatList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddHat("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnCapeShow(){
+	$('#Cbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedCapes= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedCapes = _.map(
+					itemData.filter(item => item.id >= 1100000 && item.id < 1110000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedCapes = _.map(
+					itemData.filter(item => item.id >= 1100000 && item.id < 1110000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedCapes = _.map(
+					itemData.filter(item => item.id >= 1100000 && item.id < 1110000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedCapes = _.map(
+					itemData.filter(item => item.id >= 1100000 && item.id < 1110000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedCapes = _.map(
+					itemData.filter(item => item.id >= 1100000 && item.id < 1110000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedCapes = _.map(
+					itemData.filter(item => item.id >= 1100000 && item.id < 1110000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedCapes = _.map(
+					itemData.filter(item => item.id >= 1100000 && item.id < 1110000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedCapes = _.map(
+					itemData.filter(item => item.id >= 1100000 && item.id < 1110000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedCapes.length; i++){
+			var iconId = groupedCapes[i].id;
+			var iconNm = groupedCapes[i].name;
+			var iconCate = groupedCapes[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#capeList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddCape("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnCashShow(){
+	$('#Cashbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedCashes= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedCashes = _.map(
+					itemData.filter(item => item.id >= 1701000 && item.id < 1703000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedCashes = _.map(
+					itemData.filter(item => item.id >= 1701000 && item.id < 1703000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedCashes = _.map(
+					itemData.filter(item => item.id >= 1701000 && item.id < 1703000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedCashes = _.map(
+					itemData.filter(item => item.id >= 1701000 && item.id < 1703000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedCashes = _.map(
+					itemData.filter(item => item.id >= 1701000 && item.id < 1703000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedCashes = _.map(
+					itemData.filter(item => item.id >= 1701000 && item.id < 1703000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedCashes = _.map(
+					itemData.filter(item => item.id >= 1701000 && item.id < 1703000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedCashes = _.map(
+					itemData.filter(item => item.id >= 1701000 && item.id < 1703000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedCashes.length; i++){
+			var iconId = groupedCashes[i].id;
+			var iconNm = groupedCashes[i].name;
+			var iconCate = groupedCashes[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#cashList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddCash("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnGloveShow(){
+	$('#Gbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedGloves= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedGloves = _.map(
+					itemData.filter(item => item.id >= 1080000 && item.id < 1090000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedGloves = _.map(
+					itemData.filter(item => item.id >= 1080000 && item.id < 1090000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedGloves = _.map(
+					itemData.filter(item => item.id >= 1080000 && item.id < 1090000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedGloves = _.map(
+					itemData.filter(item => item.id >= 1080000 && item.id < 1090000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedGloves = _.map(
+					itemData.filter(item => item.id >= 1080000 && item.id < 1090000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedGloves = _.map(
+					itemData.filter(item => item.id >= 1080000 && item.id < 1090000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedGloves = _.map(
+					itemData.filter(item => item.id >= 1080000 && item.id < 1090000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedGloves = _.map(
+					itemData.filter(item => item.id >= 1080000 && item.id < 1090000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedGloves.length; i++){
+			var iconId = groupedGloves[i].id;
+			var iconNm = groupedGloves[i].name;
+			var iconCate = groupedGloves[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#gloveList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddGlove("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnShoesShow(){
+	$('#Sbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedShoes= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedShoes = _.map(
+					itemData.filter(item => item.id >= 1070000 && item.id < 1080000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedShoes = _.map(
+					itemData.filter(item => item.id >= 1070000 && item.id < 1080000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedShoes = _.map(
+					itemData.filter(item => item.id >= 1070000 && item.id < 1080000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedShoes = _.map(
+					itemData.filter(item => item.id >= 1070000 && item.id < 1080000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedShoes = _.map(
+					itemData.filter(item => item.id >= 1070000 && item.id < 1080000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedShoes = _.map(
+					itemData.filter(item => item.id >= 1070000 && item.id < 1080000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedShoes = _.map(
+					itemData.filter(item => item.id >= 1070000 && item.id < 1080000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedShoes = _.map(
+					itemData.filter(item => item.id >= 1070000 && item.id < 1080000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedShoes.length; i++){
+			var iconId = groupedShoes[i].id;
+			var iconNm = groupedShoes[i].name;
+			var iconCate = groupedShoes[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#shoesList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddShoes("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnEarringsShow(){
+	$('#Earbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedEarrings= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedEarrings = _.map(
+					itemData.filter(item => item.id >= 1030000 && item.id < 1040000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedEarrings = _.map(
+					itemData.filter(item => item.id >= 1030000 && item.id < 1040000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedEarrings = _.map(
+					itemData.filter(item => item.id >= 1030000 && item.id < 1040000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedEarrings = _.map(
+					itemData.filter(item => item.id >= 1030000 && item.id < 1040000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedEarrings = _.map(
+					itemData.filter(item => item.id >= 1030000 && item.id < 1040000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedEarrings = _.map(
+					itemData.filter(item => item.id >= 1030000 && item.id < 1040000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedEarrings = _.map(
+					itemData.filter(item => item.id >= 1030000 && item.id < 1040000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedEarrings = _.map(
+					itemData.filter(item => item.id >= 1030000 && item.id < 1040000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedEarrings.length; i++){
+			var iconId = groupedEarrings[i].id;
+			var iconNm = groupedEarrings[i].name;
+			var iconCate = groupedEarrings[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#earringsList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddEarring("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnFAShow(){
+	$('#FAbtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedFAs= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedFAs = _.map(
+					itemData.filter(item => item.id >= 1010000 && item.id < 1020000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedFAs = _.map(
+					itemData.filter(item => item.id >= 1010000 && item.id < 1020000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedFAs = _.map(
+					itemData.filter(item => item.id >= 1010000 && item.id < 1020000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedFAs = _.map(
+					itemData.filter(item => item.id >= 1010000 && item.id < 1020000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedFAs = _.map(
+					itemData.filter(item => item.id >= 1010000 && item.id < 1020000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedFAs = _.map(
+					itemData.filter(item => item.id >= 1010000 && item.id < 1020000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedFAs = _.map(
+					itemData.filter(item => item.id >= 1010000 && item.id < 1020000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedFAs = _.map(
+					itemData.filter(item => item.id >= 1010000 && item.id < 1020000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedFAs.length; i++){
+			var iconId = groupedFAs[i].id;
+			var iconNm = groupedFAs[i].name;
+			var iconCate = groupedFAs[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#FAList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddFA("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
+
+function fnEAShow(){
+	$('#Ebtn').prop("onclick", null).attr("onclick", null)
+	var gender = $("input[name='isCondi']:checked").val();
+	var cashYn = $("#isCash:checked").val();
+	var groupedEAs= "";
+	const itemListPromise = axios.get(src);
+
+	Promise.all([itemListPromise]).then(responses => {
+		if(!_.every(responses, res => res.status === 200)) return;
+		const itemData = (responses[0].data || []) || []
+		if(cashYn == "on"){
+			if(gender == "0"){
+				groupedEAs = _.map(
+					itemData.filter(item => item.id >= 1020000 && item.id < 1030000 && item.isCash && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedEAs = _.map(
+					itemData.filter(item => item.id >= 1020000 && item.id < 1030000 && item.isCash && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedEAs = _.map(
+					itemData.filter(item => item.id >= 1020000 && item.id < 1030000 && item.isCash && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedEAs = _.map(
+					itemData.filter(item => item.id >= 1020000 && item.id < 1030000 && item.isCash)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}else{
+			if(gender == "0"){
+				groupedEAs = _.map(
+					itemData.filter(item => item.id >= 1020000 && item.id < 1030000 && item.requiredGender == 0)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "1"){
+				groupedEAs = _.map(
+					itemData.filter(item => item.id >= 1020000 && item.id < 1030000 && item.requiredGender == 1)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else if(gender == "2"){
+				groupedEAs = _.map(
+					itemData.filter(item => item.id >= 1020000 && item.id < 1030000 && item.requiredGender == 2)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}else{
+				groupedEAs = _.map(
+					itemData.filter(item => item.id >= 1020000 && item.id < 1030000)
+					, itemGrouping => {
+					const firstItem = itemGrouping
+					return firstItem
+					}
+				);
+			}
+		}
+
+		for(var i=0; i<groupedEAs.length; i++){
+			var iconId = groupedEAs[i].id;
+			var iconNm = groupedEAs[i].name;
+			var iconCate = groupedEAs[i].typeInfo.subCategory;
+			var iconSrc = "https://maplestory.io/api/" + region + "/" + version + "/item/" + iconId + "/icon";
+			$("#EAList").append("<span data-toggle='tooltip' data-placement='bottom' title='" + iconNm + "'><img src='" + iconSrc + "' id='" + iconId +"' onclick='javascript:rightListAddEA("+ iconId +", \"" + iconNm + "\", \"" + iconCate + "\");'/></span>");
+		}
+	})
+}
