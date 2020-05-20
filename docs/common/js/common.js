@@ -1,6 +1,15 @@
 var version = '333';
 var region = 'KMS';
 
+$(document).ready(function(){
+	document.addEventListener("DOMContentLoaded", function() {
+		if(window.sessionStorage) {
+			sessionStorage.clear();
+		}");
+		}
+	});
+});
+
 $(document).mouseup(function(e){
 	var lwth = document.getElementById("mySidenav").style.width;
 	var rwth = document.getElementById("mySidenavR").style.width;
