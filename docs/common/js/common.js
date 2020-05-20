@@ -436,7 +436,7 @@ function fnSrch(){
 				isCondi:val2
 			},
 			success: function (response){
-				console.log($(response).find('#mySidenav').prevObject[55]);
+				console.log(response);
 				var rt = $(response).find('#mySidenav').prevObject[55].childNodes[6].innerHTML;
 				$("#mySidenav").html(rt);
 
