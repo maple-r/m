@@ -498,7 +498,7 @@ function fnSrchShow(srch){
 	}
 
 	$("#srchList").empty();
-	$('#srchBtn').prop("onclick", null).attr("onclick", null)
+	//$('#srchBtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedSrch= "";
@@ -618,7 +618,6 @@ var src = "https://maplestory.io/api/" + region + "/" + version + "/item/categor
 function fnHairShow(){
 	$('#Hbtn').toggleClass("active");
 	var dropdownContent = document.getElementById('Hbtn').nextElementSibling;
-	alert(dropdownContent.style.display);
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
@@ -740,7 +739,7 @@ function fnFaceShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Fbtn').prop("onclick", null).attr("onclick", null)
+	//$('#Fbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedFaces= "";
@@ -854,7 +853,7 @@ function fnOverallShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Obtn').prop("onclick", null).attr("onclick", null)
+	//$('#Obtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedOveralls= "";
@@ -953,7 +952,7 @@ function fnTopShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Tbtn').prop("onclick", null).attr("onclick", null)
+	//$('#Tbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedTops= "";
@@ -1051,7 +1050,7 @@ function fnBottomShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Bbtn').prop("onclick", null).attr("onclick", null)
+	//$('#Bbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedBottoms= "";
@@ -1150,7 +1149,7 @@ function fnHatShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Hatbtn').prop("onclick", null).attr("onclick", null)
+//	$('#Hatbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedHats= "";
@@ -1248,7 +1247,7 @@ function fnCapeShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Cbtn').prop("onclick", null).attr("onclick", null)
+	//$('#Cbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedCapes= "";
@@ -1346,7 +1345,7 @@ function fnCashShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Cashbtn').prop("onclick", null).attr("onclick", null)
+	//$('#Cashbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedCashes= "";
@@ -1444,7 +1443,7 @@ function fnGloveShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Gbtn').prop("onclick", null).attr("onclick", null)
+	//$('#Gbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedGloves= "";
@@ -1542,7 +1541,7 @@ function fnShoesShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Sbtn').prop("onclick", null).attr("onclick", null)
+	//$('#Sbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedShoes= "";
@@ -1640,7 +1639,7 @@ function fnEarringsShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Earbtn').prop("onclick", null).attr("onclick", null)
+	//$('#Earbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedEarrings= "";
@@ -1738,7 +1737,7 @@ function fnFAShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#FAbtn').prop("onclick", null).attr("onclick", null)
+	//$('#FAbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedFAs= "";
@@ -1836,7 +1835,7 @@ function fnEAShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Ebtn').prop("onclick", null).attr("onclick", null)
+	//$('#Ebtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedEAs= "";
