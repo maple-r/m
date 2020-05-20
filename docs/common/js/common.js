@@ -79,6 +79,28 @@ function closeNavR() {
 	$("#opRTog").attr("onclick","sideBarRtOp();");
 }
 
+
+function btSpclLbOp(){
+	var media = window.matchMedia( '( min-width: 500px )' );
+
+	if(media.matches){
+		document.getElementById("mySpclLbNav").style.height = "85%";
+	}else{
+		document.getElementById("mySpclLbNav").style.height = "85%";
+	}
+
+
+	$("#opLabel").removeAttr("onclick");
+	$("#opLabel").attr("onclick","closeBtSpclLb();");
+}
+
+function closeBtSpclLb() {
+	document.getElementById("mySpclLbNav").style.height = "0";
+
+	$("#opLabel").removeAttr("onclick");
+	$("#opLabel").attr("onclick","btSpclLbOp();");
+}
+
 let removeToast;
 
 function toast(string) {
