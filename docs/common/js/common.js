@@ -4,14 +4,14 @@ var region = 'KMS';
 $(document).mouseup(function(e){
 	var lwth = document.getElementById("mySidenav").style.width;
 	var rwth = document.getElementById("mySidenavR").style.width;
-	var bwth = document.getElementById("myBottomNav").style.width;
-	var btwth = document.getElementById("myPageNav").style.width;
+	//var bwth = document.getElementById("myBottomNav").style.width;
+	//var btwth = document.getElementById("myPageNav").style.width;
 	var swth = document.getElementById("mySpclLbNav").style.width;
 
 	var lleng = $(e.target).parents('div#mySidenav').length
 	var rleng = $(e.target).parents('div#mySidenavR').length
-	var bleng = $(e.target).parents('div#myBottomNav').length
-	var btleng = $(e.target).parents('div#myPageNav').length
+	//var bleng = $(e.target).parents('div#myBottomNav').length
+	//var btleng = $(e.target).parents('div#myPageNav').length
 	var sleng = $(e.target).parents('div#mySpclLbNav').length
 
 
@@ -23,13 +23,13 @@ $(document).mouseup(function(e){
 		closeNavR();
 	}
 
-	if(!$(e.target).hasClass('fa-lock') && (bwth != '' || bwth != '0px') && bleng != 1){
+	/*if(!$(e.target).hasClass('fa-lock') && (bwth != '' || bwth != '0px') && bleng != 1){
 		closeBtNav();
 	}
 
 	if(!$(e.target).hasClass('fa-list') && (btwth != '' || btwth != '0px') && btleng != 1){
 		closeMyNav();
-	}
+	}*/
 
 	if(!$(e.target).hasClass('label-img') && (swth != '' || swth != '0px') && sleng != 1){
 		closeBtSpclLb();
