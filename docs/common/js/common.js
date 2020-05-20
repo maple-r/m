@@ -405,6 +405,14 @@ function includeHTML() {
 var src = "https://maplestory.io/api/" + region + "/" + version + "/item/category/equip";
 
 function fnHairShow(){
+	$('#Hbtn').toggleClass("active");
+	var dropdownContent = $('#Hbtn').next();
+	if (dropdownContent.style.display === "block") {
+		dropdownContent.style.display = "none";
+	} else {
+		dropdownContent.style.display = "block";
+	}
+
 	$('#Hbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
@@ -512,6 +520,14 @@ function fnHairShow(){
 }
 
 function fnFaceShow(){
+	$('#Fbtn').toggleClass("active");
+	var dropdownContent = $('#Fbtn').next();
+	if (dropdownContent.style.display === "block") {
+		dropdownContent.style.display = "none";
+	} else {
+		dropdownContent.style.display = "block";
+	}
+
 	$('#Fbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
