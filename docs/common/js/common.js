@@ -494,7 +494,7 @@ function fnSrchShow(srch){
 		dropdownContent.style.display = "block";
 	}
 
-	$("#srchList").empty();
+	//$("#srchList").empty();
 	//$('#srchBtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
