@@ -616,6 +616,8 @@ function fnChecked(){
 var src = "https://maplestory.io/api/" + region + "/" + version + "/item/category/equip";
 
 function fnHairShow(){
+alert(dropdownContent.style.display);
+
 	$('#Hbtn').toggleClass("active");
 	var dropdownContent = document.getElementById('Hbtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
