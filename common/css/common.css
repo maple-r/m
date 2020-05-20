@@ -1,0 +1,986 @@
+.container {
+	font-family: Muli,sans-serif;
+	width: 100%;
+	bottom: 0px;
+}
+
+.header{
+	background: #b3b3b3 left no-repeat;
+	background-size: contain;
+	display: inline-flex;
+	/*justify-content: space-between;*/
+	position: fixed;
+	z-index: 9999;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	height: 48px;
+	font-size: 24px;
+	color: white;
+	-webkit-user-select:none;
+	-webkit-touch-callout:none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	overflow-y: visible !important;
+
+}
+
+.hd-ico{
+	font-size:30px;
+	cursor:pointer;
+}
+
+/* The side navigation menu */
+.sidenav {
+	height: 90%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 20; /* Stay on top */
+	top: 0px; /* Stay at the top */
+	bottom: 100px;
+	left: 0;
+	background: #fff;
+	overflow-x: hidden;	/*Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; 
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	border-right: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	border-top: 1px solid rgba(0,0,0,0.2);
+	overflow-y: scroll;
+	/*display: flex;
+	flex-direction: column;*/
+}
+
+.sidenavR {
+	height: 85%;
+	width: 0;
+	position: fixed;
+	z-index: 20;
+	top: 0px;
+	bottom: 90px;
+	right: 0;
+	background: #fff;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 40px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	border-left: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+}
+
+/* The navigation menu links */
+.sidenav a, .sidenavR a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+}
+
+.dropdown-btn {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 15px;
+	color: #818181;
+	display: block;
+	border: none;
+	background: none;
+	width:100%;
+	text-align: left;
+	cursor: pointer;
+	outline: none;
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-o-transition: 0.4s;
+}
+
+/* When you mouse over the navigation links, change their color */
+/*.sidenav a:hover, .dropdown-btn:hover {
+	color: #5a5a5a;
+}/*
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+/* The side navigation menu */
+.sidebar-my {
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	background-color: #f1f1f1;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar-my a {
+	display: block;
+	color: black;
+	padding: 16px;
+	text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar-my a.active-my {
+	background-color: #4c4c4c;
+	color: white;
+}
+
+/* Links on mouse-over */
+.sidebar-my a:hover:not(.active-my) {
+	background-color: #555;
+	color: white;
+}
+
+div.content-my {
+	margin-left: 200px;
+	padding: 1px 16px;
+	height: 1000px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+	.sidenav a {font-size: 18px;}
+	.sidenavR a {font-size: 18px;}
+}
+
+.side-header {
+	font-size: 18px;
+	line-height: 36px;
+	min-height: 36px;
+	border-bottom: 10px;
+	padding: 0 16px;
+	display: flex;
+	justify-content: space-between;
+	color: #3F3F3F;
+}
+
+.side-header input[type=search] {
+	align-self: center;
+}
+
+.item-search {
+	border : 1px solid #b3b3b3;
+	font-size: 18px;
+	line-height: 36px;
+	min-height: 36px;
+	padding: 0 16px;
+	display: flex;
+	color: #3F3F3F;
+	font-family: Muli,sans-serif;
+	width: 100%;
+}
+
+.item-search-head{
+	border : 1px solid #b3b3b3;
+	font-size: 18px;
+	line-height: 36px;
+	min-height: 36px;
+	padding: 0 16px;
+	display: inline-block;
+	color: #3F3F3F;
+	font-family: Muli,sans-serif;
+	width: 50%;
+	margin-left: 1%;
+}
+
+.side-condi {
+	font-size: 14px;
+	line-height: 30px;
+	min-height: 30px;
+	padding: 0 15px;
+	justify-content: space-between;
+	color: #3F3F3F;
+	font-family: Muli,sans-serif;
+}
+
+.side-condi label {
+	color: #3F3F3F;
+	font-family: Muli,sans-serif;
+	font-weight: 700;
+}
+
+/* Add an active class to the active dropdown button */
+.active, .dropdown-btn:hover {
+	background-color: #b3b3b3;
+	color: white;
+}
+
+.save-btn, .dropdown-btn:hover {
+	cursor: pointer;
+}
+
+.save-btn:hover {
+	background-color: #b3b3b3;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+	display: none;
+	background-color: #c7c7c7;
+	overflow-y: scroll;
+	top: 0;
+	bottom:0;
+	height: 300px;
+}
+
+.dropdown-container .active{
+	background-color: #737373;
+	color: white;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+	float: right;
+	padding-right: 8px;
+}
+
+.item-icon-list {
+	display: contents;
+	cursor: pointer;
+	width: 32px;
+	height: 32px;
+	min-width: 32px;
+	min-height: 32px;
+	max-width: 32px;
+	max-height: 32px;
+}
+
+.item-icon-list img, .similar-items img {
+	margin: 1px 1px 1px 5px;
+	max-width: 32px;
+	overflow: hidden;
+}
+
+#mydiv {
+	top:40%;
+	left:40%;
+	position: absolute;
+	z-index: 9;
+	border: none;
+	text-align: center;
+}
+
+#myCharacter {
+	padding: 10px;
+	cursor: move;
+	z-index: 10;
+	color: #fff;
+}
+
+.column {
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	padding-left: 10px;
+}
+
+.equipped-items-item-meta-colors {
+	display: block;
+	vertical-align: middle;
+	
+}
+
+.black{
+	background-color: #000000;
+}
+
+.red{
+	background-color: #ff000b;
+}
+
+.orange{
+	background-color: #ff8600;
+}
+
+.yellow{
+	background-color: #f6ff00;
+}
+
+.grin{
+	background-color: #00a425;
+}
+
+.blue{
+	background-color: #007bff;
+}
+
+.purple{
+	background-color: #8a00ff;
+}
+
+.brown{
+	background-color: #894f00;
+}
+
+.emerald{
+	background-color: #2ad3f3;
+}
+
+.amethyst{
+	background-color: #de26dd;
+}
+
+.color-pal-square{
+	display: block;
+	vertical-align: middle;
+}
+
+.color-pal-square button {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin: 0 3px 3px 0;
+	padding: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border: none;
+	border-radius: 4px;
+	vertical-align: top;
+	cursor: pointer;
+	outline: none;
+	color: white;
+}
+
+.color-pal {
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.tab {
+	top:10px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+}
+
+.tab button:hover {
+	background-color: #ddd;
+}
+
+.tab button.active {
+	background-color: #ccc;
+}
+
+.tabcontent {
+	display: none;
+	border: 1px solid #ccc;
+	border-top: none;
+	overflow: auto;
+}
+
+.tablinks {
+	width: 50%
+}
+
+ul {
+	list-style-type: none; /* Remove bullets */
+	padding: 0; /* Remove padding */
+	margin: 0; /* Remove margins */
+}
+
+ul li {
+	border-top: 1px solid #ddd; /* Add a thin border to each list item */
+	margin-top: -1px; /* Prevent double borders */
+	background-color: #fff; /* Add a grey background color */
+	padding: 12px; /* Add some padding */
+}
+
+.close-btn {
+	background-color: #444444; /* Blue background */
+	border: none; /* Remove borders */
+	color: white; /* White text */
+	font-size: 16px; /* Set a font size */
+	cursor: pointer; /* Mouse pointer on hover */
+	float: right;
+}
+
+/*
+#mySidenav::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 10px;
+}
+#mySidenav::-webkit-scrollbar-track { background-color:#e6e6e6; }
+#mySidenav::-webkit-scrollbar-thumb {	border-radius: 4px;
+	background-color: rgba(0,0,0,.5);
+	box-shadow: 0 0 1px rgba(255,255,255,.5); }
+#mySidenav::-webkit-scrollbar-thumb:hover { background: #404040; }
+#mySidenav::-webkit-scrollbar-thumb:active { background: #808080; }
+#mySidenav::-webkit-scrollbar-button { display: none; }*/
+
+
+
+.btn-srch {
+	background-color: #c7c7c7; /* Green background */
+	border: 1px solid #adadad; /* Green border */
+	color: white; /* White text */
+	padding: 3px 24px; /* Some padding */
+	cursor: pointer; /* Pointer/hand icon */
+	width: 100%; /* Set a width if needed */
+	display: block; /* Make the buttons appear below each other */
+}
+
+.btn-srch:active {
+	background-color: #e6e6e6;
+}
+
+#rightImg {
+	position: absolute;
+	z-index: 2; /*on top*/
+	opacity: 0.5; /*[0.0-1.0]*/
+	transform: translate(-100%, 0%);
+	-webkit-transform: translate(-100%, 0%);
+	-moz-transform: translate(-100%, 0%);
+	-ms-transform: translate(-100%, 0%);
+	-o-transform: translate(-100%, 0%);
+}
+
+.rightImgsl {
+	position: absolute;
+	z-index: 2; /*on top*/
+	opacity: 0.5; /*[0.0-1.0]*/
+	transform: translate(-100%, 0%);
+	-webkit-transform: translate(-100%, 0%);
+	-moz-transform: translate(-100%, 0%);
+	-ms-transform: translate(-100%, 0%);
+	-o-transform: translate(-100%, 0%);
+}
+
+.rightImgsl-m {
+	position: absolute;
+	z-index: 2; /*on top*/
+	opacity: 0.5; /*[0.0-1.0]*/
+	transform: translate(-104%, 0%);
+	-webkit-transform: translate(-104%, 0%);
+	-moz-transform: translate(-104%, 0%);
+	-ms-transform: translate(-104%, 0%);
+	-o-transform: translate(-104%, 0%);
+}
+
+.rt-img {
+	z-index: 2; /*on top*/
+	opacity: 0.5; /*[0.0-1.0]*/
+	transform: translate(0%, -100%);
+	-webkit-transform: translate(0%, -100%);
+	-moz-transform: translate(0%, -100%);
+	-ms-transform: translate(0%, -100%);
+	-o-transform: translate(0%, -100%);
+}
+
+#slider, .values {
+	display: block;
+	position: relative;
+	top: 60%;
+	left: 43%;
+	transform: translate(-50%); /*50 to the left and 20 down*/
+	-webkit-transform: translate(-50%);
+	-moz-transform: translate(-50%);
+	-ms-transform: translate(-50%);
+	-o-transform: translate(-50%);
+	width: 89%;
+	font-size: small;
+}
+
+#slider {
+	height: 10px;
+	background-color: #d3d3d3;
+	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+#slider::-webkit-slider-thumb {
+	width: 10px;
+	height: 15px;
+	border-radius: 25%;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgba(0,0,0,.5);
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+#mixColorValue {
+	float: right;
+}
+
+
+.select {
+	box-shadow: inset 0 0 0 500px rgba(0,0,0,.2);
+}
+
+
+#toast {
+	position: fixed;
+	bottom: 30px;
+	left: 50%;
+	padding: 15px 20px;
+	transform: translate(-50%, 10px);
+	-webkit-transform: translate(-50%, 10px);
+	-moz-transform: translate(-50%, 10px);
+	-ms-transform: translate(-50%, 10px);
+	-o-transform: translate(-50%, 10px);
+	border-radius: 30px;
+	overflow: hidden;
+	font-size: .8rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .5s, visibility .5s, transform .5s;
+	-webkit-transition: opacity .5s, visibility .5s, transform .5s;
+	-moz-transition: opacity .5s, visibility .5s, transform .5s;
+	-o-transition: opacity .5s, visibility .5s, transform .5s;
+	background: rgba(0, 0, 0, .35);
+	color: #fff;
+	z-index: 10000;
+}
+
+#toast.reveal {
+	opacity: 1;
+	visibility: visible;
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+}
+
+/*
+::-webkit-scrollbar {
+	width: 0.5em !important;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2) !important;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #e7e7e7 !important;
+	outline: 1px solid #FFF !important;
+}*/
+
+.slide {
+	position: absolute;
+	width: 100%;
+	height: 0;
+	bottom: 0;
+	overflow-x: hidden;
+	background-color: #FFF; color: #000;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-o-transition: all 1s;
+	z-index: 20;
+	border: 1px solid #e7e7e7;
+	overflow-y: scroll;
+}
+
+.slide.close {
+	height: 0;
+}
+
+/* Full-width inputs */
+.user-id, .pass {
+	width: 100%;
+	padding: 2px 5px;
+	margin: 1px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.log-btn {
+	background-color: #313131;
+	color: white;
+	padding: 4px 1px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+/* Add a hover effect for buttons */
+.log-btn:hover {
+	opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+
+/* Add padding to containers */
+.container {
+	padding: 8px;
+	padding-bottom: 0;
+}
+
+/* The "Forgot password" text */
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+	.sidebar-my {
+		width: 100%;
+		height: auto;
+		position: relative;
+	}
+	.sidebar-my a {float: left;}
+	div.content-my {margin-left: 0;}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 400px) {
+	span.psw {
+		display: block;
+		float: none;
+	}
+	.cancelbtn, .signupbtn, .cancelbtn-join{
+		width: 100%;
+	}
+	
+	 .sidebar-my a {
+		text-align: center;
+		float: none;
+	}
+}
+
+
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+/* Clear floats */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.cancelbtn-join, .signupbtn {
+	float: left;
+	width: 50%;
+}
+
+label {
+	margin-top: .5rem;
+	margin-bottom: 0;
+}
+
+p.guideTxt01 {
+	clear:both;
+	font-size:12px;
+	color:#0087fa;
+	padding-top:5px; 
+	text-align:left;
+}
+
+p.guideTxt02 {
+	clear:both;
+	font-size:12px; 
+	color:#f26d7d;
+	padding-top:5px;
+	text-align:left;
+}
+
+.frm-body {
+	background-color: #f1f1f1;
+	padding: 20px;
+	font-family: Arial;
+}
+
+/* Center website */
+.main-myp {
+	max-width: 1000px;
+	margin: auto;
+}
+
+.row-my {
+	margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row-my,
+.row-my > .column-my {
+	padding: 20px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column-my {
+	border: 1px solid #e7e7e7;
+	float: left;
+	width: 25%;
+}
+
+/* Clear floats after rows */
+.row-my:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Content */
+.content-myp {
+	background-color: white;
+	padding: 10px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+	.column-my {
+		width: 50%;
+	}
+	.mycha {
+		padding: 1px 20px;
+	}
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+	.column-my {
+		width: 100%;
+	}
+	.mycha {
+		padding: 1px 80px;
+	}
+}
+
+.btn-my {
+	background-color: #4c4c4c; /* Blue background */
+	border: none; /* Remove borders */
+	color: white; /* White text */
+	padding: 12px 16px; /* Some padding */
+	font-size: 16px; /* Set a font size */
+	cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* On mouse-over */
+.btn-my:hover {background: #eee;}
+
+#back{
+	position: absolute;
+	z-index: 100;
+	background-color: #000000;
+	display:none;
+	left:0;
+	top:0;
+}
+#loadingBar{
+	position:absolute;
+	left:50%;
+	top: 40%;
+	display:none;
+	z-index:9999;
+}
+
+.label-img{
+	display: inline-block;
+	height:50px;
+	width:50px;
+	background-image:url('https://maplestory.io/api/KMS/333/item/5680157/icon?resize=1');
+	background-repeat:no-repeat;
+	margin-top: 7px;
+	margin-left: 10px;
+}
+
+/* Three columns side by side */
+.sl-column {
+	float: left;
+	width: 33.3%;
+	margin-bottom: 16px;
+	padding: 0 8px;
+}
+
+/* Three columns side by side */
+.sl-column-cash {
+	float: left;
+	width: 100%;
+	margin-bottom: 16px;
+	padding: 0 7px;
+}
+
+/* Three columns side by side */
+.sl-column-noti {
+	float: left;
+	width: 100%;
+	margin-bottom: 16px;
+	padding: 0px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+	.sl-column {
+		width: 100%;
+		display: block;
+	}
+}
+
+/* Add some shadows to create a card effect */
+.sl-card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.sl-container {
+	padding: 0 10px;
+}
+
+/* Clear floats */
+.sl-container::after, .sl-row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.sl-title {
+	color: grey;
+}
+
+.sl-button {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 3px;
+	color: white;
+	background-color: #000;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+}
+
+.button:hover {
+	background-color: #555;
+}
+
+.sl-p{
+	margin-bottom: 1px;
+}
+
+.sl{
+	text-align:center;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active-s, .accordion:hover {
+	background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+	content: '\02795'; /* Unicode character for "plus" sign (+) */
+	font-size: 13px;
+	color: #777;
+	float: right;
+	margin-left: 5px;
+}
+
+.active-s:after {
+	content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.content-thumbnail {
+	padding-top : 10px;
+}
+
+.content-thumbnail img {
+	width: auto; height: auto;
+    max-width: 400px;
+    max-height: 400px;
+	padding-right : 100px;
+}
+
+.ui-list-info {
+	padding-bottom : 10px;
+}
+
+#noti a {
+	color: #232323;
+	display : block;
+	width : 350px;
+	padding-top : 5px;
+	padding-bottom : 5px;
+	padding-right : 5px;
+	float : left;
+}
+
+#slList a {
+	color: #232323;
+	display : block;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+#evList a {
+	color: #232323;
+	display : block;
+	width : 350px;
+	padding-top : 5px;
+	padding-bottom : 5px;
+	padding-right : 5px;
+	float : left;
+}
+
+.content-category {
+	font-size : 20px;
+	font-weight : bold;
+}
+
+#slList .content-category {
+	display : none;
+}
