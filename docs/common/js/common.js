@@ -429,7 +429,7 @@ function fnSrch(){
 		var val1 = $("input[name='isCondi']:checked").val();
 		var val2 = $("#isCash:checked").val();
 		$.ajax({
-			type: 'get',
+			type: 'GET',
 			url : '/m/app/sidebar.html',
 			data: {
 				isCash:val1,
