@@ -435,8 +435,6 @@ function fnSrch() {
 	  xhttp.open("GET", "/m/app/sidebar.html", true);
 	  xhttp.send();
 
-			}
-		});
 	}else{
 		$("#srchBtn").css("display", "");
 		$("#srchDiv").css("display", "block");
