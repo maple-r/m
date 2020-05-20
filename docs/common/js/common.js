@@ -625,7 +625,7 @@ function fnHairShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Hbtn').prop("onclick", null).attr("onclick", null)
+	//$('#Hbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedHair= "";
