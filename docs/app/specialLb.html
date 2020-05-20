@@ -1,0 +1,72 @@
+<div class="slide" id="mySpclLbNav">
+	<button class="accordion">역대 스페셜라벨</button>
+	<div class="panel">
+		<special include-html="/m/app/label/special.html"></special>
+	</div>
+
+	<button class="accordion">역대 마스터라벨</button>
+	<div class="panel">
+	  <special include-html="/m/app/label/special.html"></special>
+	</div>
+
+	<!--<button class="accordion">로얄스타일 아이템 획득 확률</button>
+	<div class="panel">
+		<?include_once $_SERVER['DOCUMENT_ROOT'].'/app/label/piece.php';?>
+	</div>-->
+
+	<!--<button class="accordion">캐시샵 공지</button>
+	<div class="panel">
+		<?//include_once $_SERVER['DOCUMENT_ROOT'].'/app/label/cashNotice.php';?>
+	</div>
+
+	<button class="accordion">이벤트</button>
+	<div class="panel">
+		<?//include_once $_SERVER['DOCUMENT_ROOT'].'/app/label/event.php';?>
+	</div>
+
+	<button class="accordion">공지사항</button>
+	<div class="panel">
+		<?//include_once $_SERVER['DOCUMENT_ROOT'].'/app/label/notice.php';?>
+	</div>-->
+</div>
+<script>
+$(document).ready(function(){
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active-s");
+			var panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+				panel.style.maxHeight = null;
+			} else {
+				panel.style.maxHeight = panel.scrollHeight + "px";
+			}
+		});
+	}
+});
+
+
+function btSpclLbOp(){
+	var media = window.matchMedia( '( min-width: 500px )' );
+
+	if(media.matches){
+		document.getElementById("mySpclLbNav").style.height = "85%";
+	}else{
+		document.getElementById("mySpclLbNav").style.height = "85%";
+	}
+
+
+	$("#opLabel").removeAttr("onclick");
+	$("#opLabel").attr("onclick","closeBtSpclLb();");
+}
+
+function closeBtSpclLb() {
+	document.getElementById("mySpclLbNav").style.height = "0";
+
+	$("#opLabel").removeAttr("onclick");
+	$("#opLabel").attr("onclick","btSpclLbOp();");
+}
+
+</script>
