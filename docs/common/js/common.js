@@ -487,6 +487,13 @@ function enterkey() {
 
 function fnSrchShow(srch){
 	$('#srchBtn').toggleClass("active");
+	var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
+
+	if($('#srchBtn').hasClass("active")){
+		dropdownContent.style.display = "block";
+	}else{
+		dropdownContent.style.display = "none";
+	}
 	/*var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
