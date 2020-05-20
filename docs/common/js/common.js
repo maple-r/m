@@ -5,7 +5,9 @@ $(document).ready(function(){
 	document.addEventListener("DOMContentLoaded", function() {
 		if(window.sessionStorage) {
 			sessionStorage.clear();
-		}");
+		}
+		else {
+			alert("세션을 사용할 수 없는 브라우저입니다.");
 		}
 	});
 });
