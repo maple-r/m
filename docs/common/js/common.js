@@ -1975,14 +1975,14 @@ function fnImgLoadR(url){
   $("#rightImg").attr("src", url);
 }
 
-document.getElementById("defaultOpen").click();
+/*document.getElementById("defaultOpen").click();
 
 document.addEventListener("DOMContentLoaded", function() {
 	if(window.sessionStorage) {
 		sessionStorage.clear();
 	}");
 	}
-});
+});*/
 
 function rightListAddItem(id, nm, cate){
 	if(cate == "Hair"){
