@@ -161,7 +161,7 @@ function fnRefresh(){
 	var dropdown = document.getElementsByClassName("dropdown-btn");
 	var i;
 
-	for (i = 0; i < dropdown.length; i++) {
+	/*for (i = 0; i < dropdown.length; i++) {
 		dropdown[i].addEventListener("click", function() {
 			this.classList.toggle("active");
 			var dropdownContent = this.nextElementSibling;
@@ -171,7 +171,7 @@ function fnRefresh(){
 				dropdownContent.style.display = "block";
 			}
 		});
-	}
+	}*/
 }
 
 $(function () {
@@ -363,6 +363,14 @@ function fnChecked(){
 var src = "https://maplestory.io/api/" + region + "/" + version + "/item/category/equip";
 
 function fnHairShow(){
+	$('#Hbtn').toggleClass('active');
+	var dropdownContent = $('#Hbtn').next();
+	if (dropdownContent.style.display === "block") {
+		dropdownContent.style.display = "none";
+	} else {
+		dropdownContent.style.display = "block";
+	}
+
 	$('#Hbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
