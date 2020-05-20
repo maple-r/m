@@ -59,6 +59,7 @@ function closeNav() {
 }
 
 function sideBarRtOp() {
+	document.getElementById("defaultOpen").click();
 	var media = window.matchMedia( '( min-width: 500px )' );
 
 	if(media.matches){
@@ -429,15 +430,10 @@ function fnSrch(){
 		var val2 = $("#isCash:checked").val();
 		$.ajax({
 			type: 'post',
+			url : 'app/sidebar.html',
 			data: {
 				isCash:val1,
 				isCondi:val2
-			},
-			beforeSend: function(){
-				fnLoading();
-			},
-			complete: function(){
-				fnLoadingEnd();
 			},
 			success: function (response){
 				var rt = $(response).find('#mySidenav').prevObject[55].childNodes[6].innerHTML;
@@ -2813,7 +2809,7 @@ function imageSaveMy(){
 function fnSpecial(){
 	$('#special').toggleClass("active-s");
 	var panel = document.getElementById('special').nextElementSibling;
-	if (dropdownContent.style.maxHeight) {
+	if (panel.style.maxHeight) {
 		panel.style.maxHeight = null;
 	} else {
 		panel.style.maxHeight = panel.scrollHeight + "px";
@@ -2823,7 +2819,7 @@ function fnSpecial(){
 function fnMaster(){
 	$('#master').toggleClass("active-s");
 	var panel = document.getElementById('master').nextElementSibling;
-	if (dropdownContent.style.maxHeight) {
+	if (panel.style.maxHeight) {
 		panel.style.maxHeight = null;
 	} else {
 		panel.style.maxHeight = panel.scrollHeight + "px";
