@@ -424,30 +424,7 @@ $(function () {
 	$('[data-toggle="tooltip"]').tooltip()
 })
 
-function fnSrch() {
-	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
-		var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-	     console.log(this.responseText);
-	    }
-	  };
-	  xhttp.open("GET", "/m/app/sidebar.html", true);
-	  xhttp.send();
-
-	}else{
-		$("#srchBtn").css("display", "");
-		$("#srchDiv").css("display", "block");
-		if($("#itemSrh").val() == ""){
-			fnSrchShow($("#itemSrhH").val());
-		}else{
-			fnSrchShow($("#itemSrh").val());
-		}
-
-	}
-}
-
-function loadDoc(){
+function fnSrch(){
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
 		var val1 = $("input[name='isCondi']:checked").val();
 		var val2 = $("#isCash:checked").val();
@@ -509,13 +486,13 @@ function enterkey() {
 }
 
 function fnSrchShow(srch){
-	$('#srchBtn').toggleClass("active");
+/*	$('#srchBtn').toggleClass("active");
 	var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
-	}
+	}*/
 
 	$("#srchList").empty();
 	//$('#srchBtn').prop("onclick", null).attr("onclick", null)
