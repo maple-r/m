@@ -486,13 +486,13 @@ function enterkey() {
 }
 
 function fnSrchShow(srch){
-/*	$('#srchBtn').toggleClass("active");
+	$('#srchBtn').toggleClass("active");
 	var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
-	}*/
+	}
 
 	$("#srchList").empty();
 	//$('#srchBtn').prop("onclick", null).attr("onclick", null)
