@@ -2055,7 +2055,7 @@ var OverallArr = "";
 function rightListAddOverall(id, nm, cate){
 	toast(nm+" 추가 완료!");
 	addList(id, nm, cate);
-	OverallArr = ',{"itemId":' + id + ',"version":"' +  + '","region":"' + region + '"}';
+	OverallArr = ',{"itemId":' + id + ',"version":"' + version + '","region":"' + region + '"}';
 
 	fnSetSrc();
 }
