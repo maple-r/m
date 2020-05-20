@@ -18,23 +18,23 @@ $(document).mouseup(function(e){
 	if(!$(e.target).hasClass('fa-child') && (lwth != '' || lwth != '0px') && lleng != 1){
 		closeNav();
 	}
-	
+
 	if(!$(e.target).hasClass('fa-cog') && (rwth != '' || rwth != '0px') && rleng != 1){
 		closeNavR();
 	}
-	
+
 	if(!$(e.target).hasClass('fa-lock') && (bwth != '' || bwth != '0px') && bleng != 1){
 		closeBtNav();
 	}
-	
+
 	if(!$(e.target).hasClass('fa-list') && (btwth != '' || btwth != '0px') && btleng != 1){
 		closeMyNav();
 	}
-	
+
 	if(!$(e.target).hasClass('label-img') && (swth != '' || swth != '0px') && sleng != 1){
 		closeBtSpclLb();
 	}
-	
+
 });
 
 function sideBarOp() {
@@ -45,7 +45,7 @@ function sideBarOp() {
 	}else{
 		document.getElementById("mySidenav").style.width = "80%";
 	}
-	
+
 
 	$("#opTog").removeAttr("onclick");
 	$("#opTog").attr("onclick","javascript:closeNav();");
@@ -53,7 +53,7 @@ function sideBarOp() {
 
 function closeNav() {
 	document.getElementById("mySidenav").style.width = "0px";
-	
+
 	$("#opTog").removeAttr("onclick");
 	$("#opTog").attr("onclick","javascript:sideBarOp();");
 }
@@ -66,7 +66,7 @@ function sideBarRtOp() {
 	}else{
 		document.getElementById("mySidenavR").style.width = "80%";
 	}
-	
+
 
 	$("#opRTog").removeAttr("onclick");
 	$("#opRTog").attr("onclick","closeNavR();");
@@ -74,7 +74,7 @@ function sideBarRtOp() {
 
 function closeNavR() {
 	document.getElementById("mySidenavR").style.width = "0";
-	
+
 	$("#opRTog").removeAttr("onclick");
 	$("#opRTog").attr("onclick","sideBarRtOp();");
 }
@@ -109,7 +109,7 @@ function changeZoom(e){
 	const baseColorValue = document.getElementById("baseColorValue");
 	const mixColorValue = document.getElementById("mixColorValue");
 	var sliderValue = e.value;
-	
+
 	document.getElementById("slider").value = e.value;
 	mixColorValue.textContent = (100-sliderValue) + "%";
 	baseColorValue.textContent = sliderValue + "%";
@@ -137,10 +137,10 @@ function  resettingValuesR(){
 function chgColor(e, itemId){
 	const ltColor = document.getElementsByClassName("lt");
 	const rtColor = document.getElementsByClassName("rt");
-	
+
 	const canvasLt = document.getElementById("leftImg").src;
 	const canvasRt = document.getElementById("rightImg").src;
-	
+
 	for(let i=0; i<8; i++){
 		if(ltColor[i].classList.contains("select") && ltColor[i] != e && e.classList.contains("lt")){
 			unselected(ltColor[i]);
@@ -149,7 +149,7 @@ function chgColor(e, itemId){
 			unselected(rtColor[i]);
 		}
 	};
-	
+
 	if(e.classList.contains("select")) {
 		unselected(e);
 	}else{
@@ -175,8 +175,8 @@ function chgColor(e, itemId){
 			}else if(ColorPicked == "brown"){
 				num = "7";
 			}
-			
-			
+
+
 			/*RenderCanvas*/
 			if(canvasRt.indexOf(itemId) != -1){
 				const str = canvasRt.replace(itemId, silceId+num);
@@ -211,8 +211,8 @@ function chgColor(e, itemId){
 			}else if(ColorPicked == "brown"){
 				num = "7";
 			}
-			
-			
+
+
 			/*RenderCanvas*/
 			if(canvasLt.indexOf(itemId) != -1){
 				const str = canvasLt.replace(itemId, silceId+num);
@@ -235,11 +235,11 @@ function chgColor(e, itemId){
 function chgEyeColor(e, itemId){
 	const ltColor = document.getElementsByClassName("lte");
 	const rtColor = document.getElementsByClassName("rte");
-	
+
 	 /*RenderCanvas*/
 	const canvasLt = document.getElementById("leftImg").src;
 	const canvasRt = document.getElementById("rightImg").src;
-	
+
 	for(let i=0; i<8; i++){
 		if(ltColor[i].classList.contains("select") && ltColor[i] != e && e.classList.contains("lte")){
 			unselected(ltColor[i]);
@@ -248,7 +248,7 @@ function chgEyeColor(e, itemId){
 			unselected(rtColor[i]);
 		}
 	}
-	
+
 	if(e.classList.contains("select")) {
 		unselected(e);
 	}else{
@@ -275,7 +275,7 @@ function chgEyeColor(e, itemId){
 			}else if(ColorPicked == "amethyst"){
 				num = "7";
 			}
-			
+
 			 /*RenderCanvas*/
 			if(canvasRt.indexOf(itemId) != -1){
 				const str = canvasRt.replace(itemId, silceIdFr+num+silceIdEd);
@@ -308,7 +308,7 @@ function chgEyeColor(e, itemId){
 			}else if(ColorPicked == "amethyst"){
 				num = "7";
 			}
-			
+
 			/*RenderCanvas*/
 			if(canvasLt.indexOf(itemId) != -1){
 				const str = canvasLt.replace(itemId, silceIdFr+num+silceIdEd);
@@ -345,4 +345,40 @@ function fnLoading(){
 function fnLoadingEnd(){
 	$('#back, #loadingBar').hide();
 	$('#back, #loadingBar').remove();
+}
+
+function includeHTML(callback) {
+  var z, i, elmnt, file, xhr;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("include-html");
+    //console.log(file);
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            elmnt.innerHTML = this.responseText;
+          }
+          if (this.status == 404) {
+            elmnt.innerHTML = "Page not found.";
+          }
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("include-html");
+          includeHTML(callback);
+        }
+      };
+      xhr.open("GET", file, true);
+      xhr.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+  setTimeout(function() {
+    callback();
+  }, 0);
 }
