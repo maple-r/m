@@ -5,7 +5,7 @@ $(function () {
 function fnSrch(){
 	if($('#srchBtn').hasClass("active")){
 		var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
-		dropdownContent.style.display = "none"; 
+		dropdownContent.style.display = "none";
 	}
 
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
@@ -73,9 +73,9 @@ function fnSrchShow(srch){
 	var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 
 	if($('#srchBtn').hasClass("active")){
-		dropdownContent.style.display = "block";
+		//dropdownContent.style.display = "block";
 	}else{
-		dropdownContent.style.display = "none";
+	//	dropdownContent.style.display = "none";
 	}
 	/*var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
