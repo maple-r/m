@@ -5,7 +5,7 @@ $(function () {
 function fnSrch(){
 	if($('#srchBtn').hasClass("active")){
 		var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
-		dropdownContent.style.display = "none";
+		dropdownContent.style.display = "none"; 
 	}
 
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
