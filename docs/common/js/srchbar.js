@@ -5,7 +5,7 @@ $(function () {
 function fnSrch(){
 	if($('#srchBtn').hasClass("active")){
 		dropdownContent.style.display = "none";
-	}
+	} 
 
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
 		var val1 = $("input[name='isCondi']:checked").val();
