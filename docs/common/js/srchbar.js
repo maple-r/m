@@ -3,6 +3,7 @@ $(function () {
 })
 
 function fnSrch(){
+	fnSrchShow();
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
 		var val1 = $("input[name='isCondi']:checked").val();
 		var val2 = $("#isCash:checked").val();
