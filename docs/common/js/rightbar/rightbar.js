@@ -42,10 +42,11 @@ function rightListAddHair(id, nm, cate){
 
 var FaceArr = "";
 var FaceArrRt = "";
+var faceid = "";
 function rightListAddFace(id, nm, cate){
 	toast(nm+" 추가 완료!");
 	addList(id, nm, cate);
-
+  faceid = id;
   var ani = document.getElementById("ani").value;
   if(ani != 'default'){
     FaceArr = ',{"itemId":' + id + ',"animationName":"'+ ani +'","version":"' + version + '","region":"' + region + '"}';
