@@ -68,9 +68,9 @@ function fnSrchShow(srch){
 	var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 
 	if($('#srchBtn').hasClass("active")){
-		dropdownContent.style.display = "block";
+	//	dropdownContent.style.display = "block";
 	}else{
-		dropdownContent.style.display = "none";
+		//dropdownContent.style.display = "none";
 	}
 	/*var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
@@ -79,7 +79,7 @@ function fnSrchShow(srch){
 		dropdownContent.style.display = "block";
 	}*/
 
-	$("#srchList").empty(); 
+	//$("#srchList").empty();
 	//$('#srchBtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
