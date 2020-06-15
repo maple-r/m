@@ -196,6 +196,8 @@ function addList(id, nm, cate){
       if(id >= 1050000 && id < 1060000){
         TopArr = '';
         BottomArr = '';
+        $("#Bottom").remove();
+        $("#Bottom").remove();
       }else{
         OverallArr = '';
       }
