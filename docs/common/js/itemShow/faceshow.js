@@ -8,13 +8,13 @@ function fnFaceShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	//$('#Fbtn').prop("onclick", null).attr("onclick", null)
+	$('#Fbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedFaces= "";
 	const itemListPromise = axios.get(src);
 
-	Promise.all([itemListPromise]).then(responses => { 
+	Promise.all([itemListPromise]).then(responses => {
 		if(!_.every(responses, res => res.status === 200)) return;
 		const itemData = (responses[0].data || []) || []
 		if(cashYn == "on"){
