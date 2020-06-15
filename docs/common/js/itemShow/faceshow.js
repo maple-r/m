@@ -5,7 +5,7 @@ function fnFaceShow(){
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 		$('#Fbtn').prop("onclick", null).attr("onclick", null);
-	} else {
+	} else { 
 		dropdownContent.style.display = "block";
 	}
 
