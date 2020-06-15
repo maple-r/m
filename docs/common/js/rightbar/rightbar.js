@@ -193,6 +193,11 @@ function addList(id, nm, cate){
 		if($('#Top').val() == "undefined" && $('#Overall').val() == "undefined"){
 			appendOther(id, nm, cate);
 		}else{
+      if(id >= 1050000 && id < 1060000){
+        TopArr = '';
+      }else{
+        OverallArr = '';
+      }
 			$("#Top").remove();
 			$("#Top").remove();
       $("#Overall").remove();
