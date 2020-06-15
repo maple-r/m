@@ -1,13 +1,13 @@
 function fnHairShow(){
-	$('#Hbtn').toggleClass("active");
+	/*$('#Hbtn').toggleClass("active");
 	var dropdownContent = document.getElementById('Hbtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
-	}
+	}*/
 
-	//$('#Hbtn').prop("onclick", null).attr("onclick", null)
+	$('#Hbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedHair= "";

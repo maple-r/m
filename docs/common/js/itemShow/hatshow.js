@@ -1,13 +1,13 @@
 function fnHatShow(){
-	$('#Hatbtn').toggleClass("active");
+	/*$('#Hatbtn').toggleClass("active");
 	var dropdownContent = document.getElementById('Hatbtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
-	}
+	}*/
 
-//	$('#Hatbtn').prop("onclick", null).attr("onclick", null)
+	$('#Hatbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedHats= "";

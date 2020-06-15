@@ -1,13 +1,13 @@
 function fnBottomShow(){
-	$('#Bbtn').toggleClass("active");
+	/*$('#Bbtn').toggleClass("active");
 	var dropdownContent = document.getElementById('Bbtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
-	}
+	}*/
 
-	//$('#Bbtn').prop("onclick", null).attr("onclick", null)
+	$('#Bbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedBottoms= "";

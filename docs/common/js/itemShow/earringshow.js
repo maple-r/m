@@ -1,13 +1,13 @@
 function fnEarringsShow(){
-	$('#Earbtn').toggleClass("active");
+	/*$('#Earbtn').toggleClass("active");
 	var dropdownContent = document.getElementById('Earbtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
-	}
+	}*/
 
-	//$('#Earbtn').prop("onclick", null).attr("onclick", null)
+	$('#Earbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedEarrings= "";

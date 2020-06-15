@@ -1,13 +1,13 @@
 function fnShoesShow(){
-	$('#Sbtn').toggleClass("active");
+	/*$('#Sbtn').toggleClass("active");
 	var dropdownContent = document.getElementById('Sbtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
-	}
+	}*/
 
-	//$('#Sbtn').prop("onclick", null).attr("onclick", null)
+	$('#Sbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedShoes= "";
