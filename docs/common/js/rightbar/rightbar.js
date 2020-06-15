@@ -204,22 +204,21 @@ function addList(id, nm, cate){
 			$("#Overall").remove();
 			appendOther(id, nm, cate);
 		}
-	}/*else if(id >= 1040000 && id < 1050000){ //top
-		if($('#' + cate + '').val() == "undefined"){
-			appendOther(id, nm, cate);
-		}else{
-			$("#" + cate + "").remove();
-			$("#" + cate + "").remove();
-			appendOther(id, nm, cate);
-		}
-	}*/else if(id >= 1060000 && id < 1070000){ //bottom
-		if($('#' + cate + '').val() == "undefined"){
-			appendOther(id, nm, cate);
-		}else{
-			$("#" + cate + "").remove();
-			$("#" + cate + "").remove();
-			appendOther(id, nm, cate);
-		}
+	}else if(id >= 1050000 && id < 1070000){ //overall ~ bottom
+    if($('#Bottom').val() == "undefined" && $('#Overall').val() == "undefined"){
+      appendOther(id, nm, cate);
+    }else{
+      if(id >= 1050000 && id < 1060000){
+        BottomArr = '';
+      }else{
+        OverallArr = '';
+      }
+      $("#Bottom").remove();
+      $("#Bottom").remove();
+      $("#Overall").remove();
+      $("#Overall").remove();
+      appendOther(id, nm, cate);
+    }
 	}else if(id >= 1000000 && id < 1010000){ //hat
 		if($('#' + cate + '').val() == "undefined"){
 			appendOther(id, nm, cate);

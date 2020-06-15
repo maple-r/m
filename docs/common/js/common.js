@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 });*/
 
-function fnSetSrc(){ 
+function fnSetSrc(){
 
 		var value = document.getElementById("skinId").value;
 		var b = Number(value)+10000;
@@ -170,7 +170,6 @@ console.log(OverallArr);
 			var item = encodeURIComponent(HairArr+FaceArr+TopArr+BottomArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		}else{
 			var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
-
 		}
 
 	var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
