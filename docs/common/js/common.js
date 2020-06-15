@@ -219,7 +219,7 @@ function fnCngAni(){
     FaceArr = ',{"itemId":' + faceid + ',"version":"' + version + '","region":"' + region + '"}';
   }
 
-	FaceArrRt = "";
+	FaceArrRt = ""; 
 	fnSetSrc();
 }
 
