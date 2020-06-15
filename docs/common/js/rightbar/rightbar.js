@@ -189,16 +189,31 @@ function addList(id, nm, cate){
 			appendFace(id, nm, cate);
 			//sessionStorage.setItem("face", id);
 		}
-	}else if(id >= 1050000 && id < 1060000){ //overall
+	}else if(id >= 1040000 && id < 1060000){ //top ~ overall
+		if($('#Top').val() == "undefined" && $('#Overall').val() == "undefined"){
+			appendOther(id, nm, cate);
+		}else{
+			$("#Top").remove();
+			$("#Top").remove();
+      $("#Overall").remove();
+			$("#Overall").remove();
+			appendOther(id, nm, cate);
+		}
+	}/*else if(id >= 1040000 && id < 1050000){ //top
 		if($('#' + cate + '').val() == "undefined"){
 			appendOther(id, nm, cate);
-			//sessionStorage.setItem("overall", id);
 		}else{
-			//sessionStorage.removeItem("overall");
 			$("#" + cate + "").remove();
 			$("#" + cate + "").remove();
 			appendOther(id, nm, cate);
-			//sessionStorage.setItem("overall", id);
+		}
+	}*/else if(id >= 1060000 && id < 1070000){ //bottom
+		if($('#' + cate + '').val() == "undefined"){
+			appendOther(id, nm, cate);
+		}else{
+			$("#" + cate + "").remove();
+			$("#" + cate + "").remove();
+			appendOther(id, nm, cate);
 		}
 	}else if(id >= 1000000 && id < 1010000){ //hat
 		if($('#' + cate + '').val() == "undefined"){
@@ -210,28 +225,6 @@ function addList(id, nm, cate){
 			$("#" + cate + "").remove();
 			appendOther(id, nm, cate);
 			//sessionStorage.setItem("hat", id);
-		}
-	}else if(id >= 1040000 && id < 1050000){ //top
-		if($('#' + cate + '').val() == "undefined"){
-			appendOther(id, nm, cate);
-			//sessionStorage.setItem("top", id);
-		}else{
-			//sessionStorage.removeItem("top");
-			$("#" + cate + "").remove();
-			$("#" + cate + "").remove();
-			appendOther(id, nm, cate);
-			//sessionStorage.setItem("top", id);
-		}
-	}else if(id >= 1060000 && id < 1070000){ //top
-		if($('#' + cate + '').val() == "undefined"){
-			appendOther(id, nm, cate);
-			//sessionStorage.setItem("bottom", id);
-		}else{
-			//sessionStorage.removeItem("bottom");
-			$("#" + cate + "").remove();
-			$("#" + cate + "").remove();
-			appendOther(id, nm, cate);
-			//sessionStorage.setItem("bottom", id);
 		}
 	}else if(id >= 1100000 && id < 1110000){ //cape
 		if($('#' + cate + '').val() == "undefined"){
