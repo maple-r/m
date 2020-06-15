@@ -3,7 +3,10 @@ $(function () {
 })
 
 function fnSrch(){
-	
+	if($('#srchBtn').hasClass("active")){
+		dropdownContent.style.display = "noneblock";
+	}
+
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
 		var val1 = $("input[name='isCondi']:checked").val();
 		var val2 = $("#isCash:checked").val();
