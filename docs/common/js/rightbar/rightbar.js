@@ -195,6 +195,7 @@ function addList(id, nm, cate){
 		}else{
       if(id >= 1050000 && id < 1060000){
         TopArr = '';
+        BottomArr = '';
       }else{
         OverallArr = '';
       }
