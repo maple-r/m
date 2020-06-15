@@ -4,11 +4,11 @@ function fnFaceShow(){
 	var dropdownContent = document.getElementById('Fbtn').nextElementSibling;
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
-		$('#Fbtn').prop("onclick", null).attr("onclick", null);
-	} else { 
+	} else {
 		dropdownContent.style.display = "block";
 	}
 
+	$('#Fbtn').prop("onclick", null).attr("onclick", null)
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedFaces= "";
