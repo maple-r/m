@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 });*/
 
-function fnSetSrc(){
+function fnSetSrc(){ 
 
 		var value = document.getElementById("skinId").value;
 		var b = Number(value)+10000;
