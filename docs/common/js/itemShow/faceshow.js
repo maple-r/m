@@ -14,7 +14,7 @@ function fnFaceShow(){
 	var groupedFaces= "";
 	const itemListPromise = axios.get(src);
 
-	Promise.all([itemListPromise]).then(responses => {
+	Promise.all([itemListPromise]).then(responses => { 
 		if(!_.every(responses, res => res.status === 200)) return;
 		const itemData = (responses[0].data || []) || []
 		if(cashYn == "on"){
