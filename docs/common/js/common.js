@@ -166,12 +166,16 @@ function fnSetSrc(){
 		pos = document.getElementById("pos").value;
 
 console.log(OverallArr);
-		if(OverallArr == ''){
+console.log(TopArr);
+console.log(BottomArr);
+
+		/*if(OverallArr == ''){
 			var item = encodeURIComponent(HairArr+FaceArr+TopArr+BottomArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		}else{
 			var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
-		}
+		}*/
 
+	var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 	var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 	fnImgLoad(src);

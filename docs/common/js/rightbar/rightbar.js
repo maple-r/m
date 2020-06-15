@@ -332,7 +332,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -345,7 +345,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "Face"){
@@ -366,7 +366,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(HairArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -379,7 +379,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "Overall"){
@@ -399,7 +399,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(HairArr+FaceArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -412,7 +412,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "Top"){
@@ -424,7 +424,7 @@ function removeList(cate){
 
 			pos = document.getElementById("pos").value;
 
-		var item = encodeURIComponent(HairArr+FaceArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+OverallArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -437,7 +437,32 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+OverallArr+BottomArr); //+TopArr+BottomArr
+		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
+		fnImgLoadR(srcR);
+	}else if(cate == "Bottom"){
+		BottomArr = '';
+
+			var value = document.getElementById("skinId").value;
+			var b = Number(value)+10000;
+			skin = encodeURIComponent('{"itemId":' + value + ',"version":"' + version + '","region":"' + region + '"},{"itemId":' + b + ',"version":"' + version + '","region":"' + region + '"}');
+
+			pos = document.getElementById("pos").value;
+
+		var item = encodeURIComponent(HairArr+FaceArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+OverallArr); //+TopArr+BottomArr
+		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
+
+		fnImgLoad(src);
+
+		if(HairArrRt == ""){
+			HairArrRt = HairArr;
+		}
+
+		if(FaceArrRt == ""){
+			FaceArrRt = FaceArr;
+		}
+
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+OverallArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "Hat"){
@@ -457,7 +482,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 		//}
 
-		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -470,7 +495,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "Cape"){
@@ -490,7 +515,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -503,7 +528,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "Cash"){
@@ -523,7 +548,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -536,7 +561,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "Glove"){
@@ -556,7 +581,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -569,7 +594,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+ShoesArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "Shoes"){
@@ -589,7 +614,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -602,7 +627,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+EarringArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "Earrings"){
@@ -622,7 +647,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+FaArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -635,7 +660,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+FaArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "FaceAccessory"){
@@ -655,7 +680,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+EaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -668,7 +693,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+EaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}else if(cate == "EyeDecoration"){
@@ -688,7 +713,7 @@ function removeList(cate){
 			pos = document.getElementById("pos").value;
 	//	}
 
-		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr); //+TopArr+BottomArr
+		var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
 		fnImgLoad(src);
@@ -701,7 +726,7 @@ function removeList(cate){
 			FaceArrRt = FaceArr;
 		}
 
-		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr); //+TopArr+BottomArr
+		var itemR = encodeURIComponent(HairArrRt+FaceArrRt+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+TopArr+BottomArr); //+TopArr+BottomArr
 		var srcR = 'https://maplestory.io/api/Character/' + skin + itemR + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 		fnImgLoadR(srcR);
 	}
