@@ -1,7 +1,7 @@
 
 function fnFaceShow(){
 	$('#Fbtn').toggleClass("active");
-	var dropdownContent = document.getElementById('Fbtn').nextElementSibling;
+	var dropdownContent = document.getElementById('Fbtn').nextElementSibling; 
 	console.log(dropdownContent.style.display);
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
