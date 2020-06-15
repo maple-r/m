@@ -212,6 +212,12 @@ function fnCngSkin(){
 }
 
 function fnCngAni(){
+	var ani = document.getElementById("ani").value;
+  if(ani != 'default'){
+    FaceArr = ',{"itemId":' + id + ',"animationName":"'+ ani +'","version":"' + version + '","region":"' + region + '"}';
+  }else{
+    FaceArr = ',{"itemId":' + id + ',"version":"' + version + '","region":"' + region + '"}';
+  }
 	fnSetSrc();
 }
 
