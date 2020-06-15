@@ -12,7 +12,7 @@ $(document).ready(function(){
 				dropdownContent.style.display = "block";
 			}
 		});
-	}
+	} 
 });
 
 function fnFaceShow(){
