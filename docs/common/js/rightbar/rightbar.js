@@ -45,7 +45,14 @@ var FaceArrRt = "";
 function rightListAddFace(id, nm, cate){
 	toast(nm+" 추가 완료!");
 	addList(id, nm, cate);
-	FaceArr = ',{"itemId":' + id + ',"version":"' + version + '","region":"' + region + '"}';
+
+  var ani = document.getElementById("ani").value;
+  if(ani != 'default'){
+    FaceArr = ',{"itemId":' + id + ',"animationName":"'+ ani +'","version":"' + version + '","region":"' + region + '"}';
+  }else{
+    FaceArr = ',{"itemId":' + id + ',"version":"' + version + '","region":"' + region + '"}';
+  }
+
 	FaceArrRt = "";
 
 	fnSetSrc();

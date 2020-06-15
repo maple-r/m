@@ -164,7 +164,7 @@ function fnSetSrc(){
 		skin = encodeURIComponent('{"itemId":' + value + ',"version":"' + version + '","region":"' + region + '"},{"itemId":' + b + ',"version":"' + version + '","region":"' + region + '"}');
 
 		pos = document.getElementById("pos").value;
-		
+
 	var item = encodeURIComponent(HairArr+FaceArr+OverallArr+HatArr+CapeArr+CashArr+GloveArr+ShoesArr+EarringArr+FaArr+EaArr+TopArr+BottomArr); //+TopArr+BottomArr
 	var src = 'https://maplestory.io/api/Character/' + skin + item + '/' + pos + '/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0';
 
@@ -211,11 +211,13 @@ function fnCngSkin(){
 	fnSetSrc();
 }
 
+function fnCngAni(){
+	fnSetSrc();
+}
+
 function fnPosSkin(){
-	//var skin = sessionStorage.getItem("skin");
 	var newPos = document.getElementById("pos").value;
 
-	//sessionStorage.setItem("pos", newPos);
 	fnSetSrc();
 }
 
