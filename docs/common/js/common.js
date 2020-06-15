@@ -43,7 +43,7 @@ function toast(string) {
 		toast.innerText = string
 }
 
-function fnLoading(){
+function fnLoading(){ 
 	var bkHeight = $(document).height(); //뒷 배경의 상하 폭
 	var bkWidth = window.document.body.clientWidth; //뒷 배경의 좌우 폭
 	var bkCover = "<div id='back'></div>"; //뒷 배경을 감쌀 커버
