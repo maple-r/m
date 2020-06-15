@@ -218,6 +218,8 @@ function fnCngAni(){
   }else{
     FaceArr = ',{"itemId":' + faceid + ',"version":"' + version + '","region":"' + region + '"}';
   }
+
+	FaceArrRt = "";
 	fnSetSrc();
 }
 
