@@ -76,7 +76,7 @@ function enterkey() {
 }
 
 function fnSrchShow(srch){
-	$("#srchList").empty();
+//	$("#srchList").empty();
 
 	var dropdownContent = document.getElementById('srchDiv');
 	if (document.getElementById('srchDiv').style.display == "block") {
