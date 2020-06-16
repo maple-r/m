@@ -1,14 +1,16 @@
 function fnFaceShow(){
 	$('#Fbtn').toggleClass("active");
 	var dropdownContent = document.getElementById('Fbtn').nextElementSibling;
-	console.log(dropdownContent.style.display);
+
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
 	}
 
-	$('#Fbtn').prop("onclick", null).attr("onclick", null)
+	var imgSpan = document.getElementById('FaceList').nextElementSibling;
+	console.log(imgSpan);
+
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
 	var groupedFaces= "";
