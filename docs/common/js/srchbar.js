@@ -3,9 +3,15 @@ $(function () {
 })
 
 function fnSrch(){
-	if($('#srchBtn').hasClass("active")){
+	/*if($('#srchBtn').hasClass("active")){
 		var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 		dropdownContent.style.display = "none";
+	}*/
+	var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
+	if (dropdownContent.style.display === "block") {
+		dropdownContent.style.display = "none";
+	} else {
+		dropdownContent.style.display = "block";
 	}
 
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
