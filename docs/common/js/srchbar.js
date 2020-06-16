@@ -2,13 +2,6 @@ $(function () {
 	$('[data-toggle="tooltip"]').tooltip()
 })
 
-var dropdownContent = document.getElementById('srchDiv');
-if (document.getElementById('srchDiv').style.display == "block" || document.getElementById('srchDiv').style.display == "") {
-	dropdownContent.style.display = "none";
-} else {
-	dropdownContent.style.display = "block";
-}
-
 function fnSrch(){
 	/*if($('#srchBtn').hasClass("active")){
 		var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
