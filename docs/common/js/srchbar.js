@@ -7,7 +7,8 @@ function fnSrch(){
 		var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 		dropdownContent.style.display = "none";
 	}*/
-	var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
+	var dropdownContent = document.getElementById('srchBtn').childNodes;
+	console.log(dropdownContent);
 	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
