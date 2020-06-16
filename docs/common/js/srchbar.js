@@ -85,6 +85,14 @@ function enterkey() {
 function fnSrchShow(srch){
 	$("#srchList").empty();
 
+	var dropdownContent = document.getElementById('srchDiv');
+	console.log(document.getElementById('srchDiv').style.display);
+	if (document.getElementById('srchDiv').style.display == "block" || document.getElementById('srchDiv').style.display == "") {
+		dropdownContent.style.display = "none";
+	} else {
+		dropdownContent.style.display = "block";
+	}
+
 	var imgSpan = $('#srchList').children();
 	if(imgSpan.length == 0){
 		//$('#srchBtn').prop("onclick", null).attr("onclick", null)
