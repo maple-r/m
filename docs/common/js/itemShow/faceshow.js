@@ -8,7 +8,7 @@ function fnFaceShow(){
 		dropdownContent.style.display = "block";
 	}
 
-	var imgSpan = $('#FaceList').children();
+	var imgSpan = $('#FaceList').children(); 
 	console.log(imgSpan);
 
 	var gender = $("input[name='isCondi']:checked").val();
