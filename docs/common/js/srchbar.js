@@ -14,11 +14,9 @@ function fnSrch(){
 				isCondi:val2
 			},
 			success: function (response){
-				console.log(response);
 				var rt = response.replace('<div id="mySidenav" class="sidenav">', '').replace('<!--눈장 메뉴 end-->\n</div>', '');
 	console.log(rt);
-				//var rt = $(response).find('#mySidenav').prevObject[55].childNodes[6].innerHTML;
-				$("#mySidenav").html(response);
+				$("#mySidenav").html(rt);
 
 				if(val1 == "0"){
 					$('input[name="isCondi"]:radio[value="0"]').prop('checked',true);
