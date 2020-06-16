@@ -8,8 +8,8 @@ function fnSrch(){
 		dropdownContent.style.display = "none";
 	}*/
 	var dropdownContent = document.getElementById('srchDiv');
-	console.log(document.getElementById('srchDiv').style.display);
-	if (document.getElementById('srchDiv').style.display == "block" || document.getElementById('srchDiv').style.display == "") {
+
+	if (document.getElementById('srchDiv').style.display == "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
