@@ -15,7 +15,7 @@ function fnSrch(){
 			},
 			success: function (response){
 				console.log(response);
-				var rt = response.replace('<div id="mySidenav" class="sidenav">', '');
+				var rt = response.replace('<div id="mySidenav" class="sidenav">', '').replace('<!--눈장 메뉴 end-->\n</div>', '');
 	console.log(rt);
 				//var rt = $(response).find('#mySidenav').prevObject[55].childNodes[6].innerHTML;
 				$("#mySidenav").html(response);
