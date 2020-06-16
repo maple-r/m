@@ -9,7 +9,7 @@ function fnFaceShow(){
 	}
 
 	var imgSpan = document.getElementById('FaceList').children();
-	console.log(imgSpan); 
+	console.log(imgSpan);
 
 	var gender = $("input[name='isCondi']:checked").val();
 	var cashYn = $("#isCash:checked").val();
