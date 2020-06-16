@@ -15,8 +15,11 @@ function fnSrch(){
 			},
 			success: function (response){
 				console.log(response);
-				var rt = $(response).find('#mySidenav').prevObject[55].childNodes[6].innerHTML;
-				$("#mySidenav").html(rt);
+				var rt = response.replace('<div id="mySidenav" class="sidenav">
+	', '');
+	console.log(rt);
+				//var rt = $(response).find('#mySidenav').prevObject[55].childNodes[6].innerHTML;
+				$("#mySidenav").html(response);
 
 				if(val1 == "0"){
 					$('input[name="isCondi"]:radio[value="0"]').prop('checked',true);
