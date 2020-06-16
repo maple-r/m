@@ -49,7 +49,7 @@ function fnSrch(){
 		});
 	}else{
 		$("#srchBtn").css("display", "");
-		$("#srchDiv").css("display", "");
+		$("#srchDiv").css("display", "block");
 		if($("#itemSrh").val() == ""){
 			fnSrchShow($("#itemSrhH").val());
 		}else{
@@ -79,8 +79,7 @@ function fnSrchShow(srch){
 	$("#srchList").empty();
 
 	var dropdownContent = document.getElementById('srchDiv');
-	console.log(document.getElementById('srchDiv').style.display);
-	if (document.getElementById('srchDiv').style.display == "block" || document.getElementById('srchDiv').style.display == "") {
+	if (document.getElementById('srchDiv').style.display == "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
