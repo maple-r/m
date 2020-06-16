@@ -49,7 +49,7 @@ function fnSrch(){
 		});
 	}else{
 		$("#srchBtn").css("display", "");
-		$("#srchDiv").css("display", "block");
+		$("#srchDiv").css("display", "");
 		if($("#itemSrh").val() == ""){
 			fnSrchShow($("#itemSrhH").val());
 		}else{
