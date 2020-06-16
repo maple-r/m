@@ -13,14 +13,14 @@ function fnSrch(){
 	/*if($('#srchBtn').hasClass("active")){
 		var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 		dropdownContent.style.display = "none";
-	}*/
+	}
 	var dropdownContent = document.getElementById('srchDiv');
 	console.log(document.getElementById('srchDiv').style.display);
 	if (document.getElementById('srchDiv').style.display == "block" || document.getElementById('srchDiv').style.display == "") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
-	}
+	}*/
 
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
 		var val1 = $("input[name='isCondi']:checked").val();
