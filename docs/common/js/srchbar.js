@@ -7,13 +7,12 @@ function fnSrch(){
 		var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
 		dropdownContent.style.display = "none";
 	}*/
-	var dropdownContent = document.getElementById('srchDiv').childNodes;
-	console.log(dropdownContent);
-	/*if (dropdownContent.style.display === "block") {
+	var dropdownContent = document.getElementById('srchDiv');
+	if (dropdownContent.style.display === "block") {
 		dropdownContent.style.display = "none";
 	} else {
 		dropdownContent.style.display = "block";
-	}*/
+	}
 
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
 		var val1 = $("input[name='isCondi']:checked").val();
