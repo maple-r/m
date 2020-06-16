@@ -3,18 +3,6 @@ $(function () {
 })
 
 function fnSrch(){
-	/*if($('#srchBtn').hasClass("active")){
-		var dropdownContent = document.getElementById('srchBtn').nextElementSibling;
-		dropdownContent.style.display = "none";
-	}
-	var dropdownContent = document.getElementById('srchDiv');
-
-	if (document.getElementById('srchDiv').style.display == "block") {
-		dropdownContent.style.display = "none";
-	} else {
-		dropdownContent.style.display = "block";
-	}*/
-
 	if($("#itemSrh").val() == "" && $("#itemSrhH").val() == ""){
 		var val1 = $("input[name='isCondi']:checked").val();
 		var val2 = $("#isCash:checked").val();
@@ -87,7 +75,6 @@ function fnSrchShow(srch){
 
 	var imgSpan = $('#srchList').children();
 	if(imgSpan.length == 0){
-		//$('#srchBtn').prop("onclick", null).attr("onclick", null)
 		var gender = $("input[name='isCondi']:checked").val();
 		var cashYn = $("#isCash:checked").val();
 		var groupedSrch= "";
