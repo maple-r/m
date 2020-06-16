@@ -9,13 +9,13 @@ function fnSrch(){
 		$.ajax({
 			type: 'GET',
 			url : '/m/app/sidebar.html',
+			dataType : 'html' ,
 			data: {
 				isCash:val1,
 				isCondi:val2
 			},
 			success: function (response){
 				var rt = response.replace('<div id="mySidenav" class="sidenav">', '').replace('<!--눈장 메뉴 end-->\n</div>', '');
-	console.log(rt);
 				$("#mySidenav").html(rt);
 
 				if(val1 == "0"){
