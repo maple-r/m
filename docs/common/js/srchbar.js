@@ -15,7 +15,7 @@ function fnSrch(){
 				isCondi:val2
 			},
 			success: function (response){
-				console.log($(response).find('#mySidenav').prevObject);
+				console.log($(response).find('#mySidenav').prevObject.innerHTML);
 				var rt = response.replace('<div id="mySidenav" class="sidenav">', '').replace('<!--눈장 메뉴 end-->\n</div>', '');
 				$("#mySidenav").html(rt);
 
