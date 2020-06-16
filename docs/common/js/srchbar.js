@@ -33,7 +33,7 @@ function fnSrch(){
 					$("#isCash").prop('checked', true);
 				}
 
-				fnRefresh();
+				//fnRefresh();
 			}
 		});
 	}else{
