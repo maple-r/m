@@ -600,7 +600,7 @@ ul li {
 	-moz-transition: all 1s;
 	-o-transition: all 1s;
 	z-index: 20;
-	border: 1px solid #e7e7e7;
+	border: 1px solid #ffffff;
 	overflow-y: scroll;
 }
 
