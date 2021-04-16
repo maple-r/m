@@ -1,4 +1,4 @@
-var version = '1117';
+var version = '1118';
 var region = 'KMST';
 
 $(document).ready(function(){
