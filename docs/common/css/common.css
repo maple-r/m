@@ -31,12 +31,12 @@
 
 /* The side navigation menu */
 .sidenav {
-	height: 90%; /* 100% Full-height */
+	height: 65%; /* 100% Full-height */
 	width: 0; /* 0 width - change this with JavaScript */
 	position: fixed; /* Stay in place */
 	z-index: 20; /* Stay on top */
 	top: 0px; /* Stay at the top */
-	bottom: 500px;
+	bottom: 100px;
 	left: 0;
 	background: #fff;
 	overflow-x: hidden;	/*Disable horizontal scroll */
