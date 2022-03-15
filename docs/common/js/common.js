@@ -1,4 +1,4 @@
-var version = '360';
+var version = '361';
 var region = 'KMS';
 
 $(document).ready(function(){
