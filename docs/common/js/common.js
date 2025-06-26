@@ -1,5 +1,5 @@
-var version = '1170';
-var region = 'KMST';
+var version = '389';
+var region = 'KMS';
 
 $(document).ready(function(){
 
